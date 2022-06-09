@@ -15,9 +15,8 @@ public class Highway {
     }
 
     public void searchVehicle(String numberPlates) {
-        numberPlates = numberPlates.toUpperCase();
         for (VehicleInfo vehicle : vehicles) {
-            if (vehicle.getNumberPlates().equals(numberPlates)) {
+            if (vehicle.getNumberPlates().equalsIgnoreCase(numberPlates)) {
                 System.out.println(vehicle.getNumberPlates() + " -> vehicle type: " + vehicle.getCarType() + "\nEntry time: " + vehicle.getEntryTime());
                 return;
             }
@@ -27,7 +26,7 @@ public class Highway {
 
     public void vehicleLeave(String numberPlates) {
         for (VehicleInfo vehicle : vehicles) {
-            if (vehicle.getNumberPlates().equals(numberPlates)) {
+            if (vehicle.getNumberPlates().equalsIgnoreCase(numberPlates)) {
                 Duration duration = Duration.between(vehicle.getEntryTime(), LocalDateTime.now());
                 double totalCost = costPerSecond * duration.getSeconds();
 
