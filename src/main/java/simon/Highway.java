@@ -10,6 +10,12 @@ public class Highway {
     private final ArrayList<VehicleInfo> vehicles = new ArrayList<>();
 
     public void vehicleEntry(String numberPlates, CarType type) {
+        for (VehicleInfo v : vehicles) {
+            if (v.getNumberPlates().equalsIgnoreCase(numberPlates)){
+                System.out.println("This vehicle is already on the highway!");
+                return;
+            }
+        }
         vehicles.add(new VehicleInfo(numberPlates, type, LocalDateTime.now()));
         System.out.println("Added vehicle " + numberPlates + " to a highway.");
     }
