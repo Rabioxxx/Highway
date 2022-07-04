@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Highway {
     private final double costPerSecond = 0.05; // in $
     private final double truckMultiplier = 2.0;
-    private final double motorcycleMultiplier = 2.0;
+    private final double motorcycleMultiplier = 1.25;
     private final ArrayList<VehicleInfo> vehicles = new ArrayList<>();
 
     public void vehicleEntry(String numberPlates, CarType type) {
