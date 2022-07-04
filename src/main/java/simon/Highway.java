@@ -40,11 +40,9 @@ public class Highway {
                 switch (vehicle.getCarType()) {
                     case TRUCK -> {
                         totalCost *= truckMultiplier;
-                        break;
                     }
                     case MOTORCYCLE -> {
                         totalCost *= motorcycleMultiplier;
-                        break;
                     }
                 }
 
