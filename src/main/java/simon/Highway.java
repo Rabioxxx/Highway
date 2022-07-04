@@ -37,15 +37,21 @@ public class Highway {
                 Duration duration = Duration.between(vehicle.getEntryTime(), LocalDateTime.now());
                 double totalCost = costPerSecond * duration.getSeconds();
 
-                if (vehicle.getCarType().equals(CarType.TRUCK)) {
-                    totalCost *= truckMultiplier;
+                switch (vehicle.getCarType()) {
+                    case TRUCK -> {
+                        totalCost *= truckMultiplier;
+                        break;
+                    }
+                    case MOTORCYCLE -> {
+                        totalCost *= motorcycleMultiplier;
+                        break;
+                    }
                 }
 
                 vehicles.remove(vehicle);
 
                 System.out.println("Vehicle " + vehicle.getNumberPlates() + " left highway.\n" +
                         "Paid: $" + Math.round(totalCost));
-                return;
             }
         }
     }
