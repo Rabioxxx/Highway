@@ -50,6 +50,7 @@ public class Highway {
 
                 System.out.println("Vehicle " + vehicle.getNumberPlates() + " left highway.\n" +
                         "Paid: $" + Math.round(totalCost));
+                break; // prevents java.util.ConcurrentModificationException
             }
         }
     }
